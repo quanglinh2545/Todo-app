@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 
-function Input( { onAdd } ) {
-  const [text, setText] = React.useState('');
+function Input({ handleAddNewTodo }) {
+  const [text, setText] = useState('');
 
-  const handleChange = e => setText(e.target.value);
+  const handleChange = (event) => {
+    setText(event.target.value);
+  };
 
-  const handleKeyDown = e => {
-    if (e.keyCode === 13) {
-      onAdd(text);
+  const handleOnKeyDown = (event) => {
+    if (event.keyCode === 13) {
+      handleAddNewTodo(text);
       setText('');
     }
   };

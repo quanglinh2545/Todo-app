@@ -1,7 +1,10 @@
-function TodoItem({ item, onCheck }) {
-  const handleChange = () => {
-    onCheck(item);
-  }
+function TodoItem({ item, handleCheck }) {
+  return (
+    <label className="panel-block">
+function TodoItem({ item, handleCheck }) {
+    </label>
+  );
+}
   return (
     <label className="panel-block">
       <input
