@@ -1,9 +1,5 @@
 import React, { useEffect, useState }  from 'react'
-
-/* スタイルシート */
 import './styles/main.css';
-
-/* コンポーネント */
 import Todo from './components/Todo';
 import Login from "./components/Login";
 import Upload from "./components/Upload";
@@ -24,7 +20,6 @@ function App() {
       setUser(newUser);
     });
   }, []);
-
   const logout = () => {
     auth.signOut();
   };
@@ -42,31 +37,3 @@ function App() {
             {user.name}
           </div>
           <div class="navbar-item">
-            <button class="button is-danger is-light is-small" onClick={logout} > Logout</button>
-          </div>
-        </div >
-      )
-    } else {
-      return (<Login />)
-    }
-  }
-  
-  return (
-    <div className="container is-fluid">
-      <header class="navbar">
-        {loading ? (
-          <p>
-            LOADING.....
-          </p>
-        ) : (
-          <HeaderContent />
-        )}
-      </header >
-      <div>
-        {user && <Todo />}
-      </div>
-    </div >
-  );
-}
-
-export default App;
