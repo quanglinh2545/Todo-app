@@ -1,0 +1,36 @@
+[debug] [2021-05-21T10:32:19.958Z] ----------------------------------------------------------------------
+[debug] [2021-05-21T10:32:19.961Z] Command:       /home/ec2-user/.nvm/versions/node/v10.24.1/bin/node /home/ec2-user/.nvm/versions/node/v10.24.1/bin/firebase deploy
+[debug] [2021-05-21T10:32:19.961Z] CLI Version:   9.11.0
+[debug] [2021-05-21T10:32:19.961Z] Platform:      linux
+[debug] [2021-05-21T10:32:19.961Z] Node Version:  v10.24.1
+[debug] [2021-05-21T10:32:20.122Z] Time:          Fri May 21 2021 10:32:19 GMT+0000 (Coordinated Universal Time)
+[debug] [2021-05-21T10:32:20.122Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-05-21T10:32:20.135Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-05-21T10:32:20.135Z] > authorizing via signed-in user (quanglinh182545@gmail.com)
+[debug] [2021-05-21T10:32:20.135Z] [iam] checking project fir-sample-99103 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-05-21T10:32:20.139Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-05-21T10:32:20.139Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-21T10:32:20.216Z] <<< HTTP RESPONSE 200 {"date":"Fri, 21 May 2021 10:32:20 GMT","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-21T10:32:20.225Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/fir-sample-99103:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-05-21T10:32:20.322Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 21 May 2021 10:32:20 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=76","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-21T10:32:20.323Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project fir-sample-99103:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2021-05-21T10:32:20.325Z] > refreshing access token with scopes: []
+[debug] [2021-05-21T10:32:20.325Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-21T10:32:20.367Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Fri, 21 May 2021 10:32:20 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-21T10:32:20.374Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fir-sample-99103 [none]
+[debug] [2021-05-21T10:32:20.563Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fir-sample-99103 403
+[debug] [2021-05-21T10:32:20.566Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fir-sample-99103 {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2021-05-21T10:32:20.566Z] HTTP Error: 403, The caller does not have permission
+[debug] [2021-05-21T10:32:20.589Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (/home/ec2-user/.nvm/versions/node/v10.24.1/lib/node_modules/firebase-tools/lib/responseToError.js:38:12)
+    at Client.doRequest (/home/ec2-user/.nvm/versions/node/v10.24.1/lib/node_modules/firebase-tools/lib/apiv2.js:238:23)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[error] 
+[error] Error: Failed to get Firebase project fir-sample-99103. Please make sure the project exists and your account has permission to access it.
