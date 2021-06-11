@@ -10,11 +10,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState([]);
   
-  useEffect(() => {
-    auth.onAuthStateChanged(async (user) => {
-      setLoading(false);
-      let newUser = null;
-      if (user) {
+  useEffect(
         newUser = await storeUserInfo(user);
       }
       setUser(newUser);
